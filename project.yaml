@@ -5,9 +5,9 @@ basic:
         staging: 'https://site.isel.pt/'
         development: ''
     breakpoints:
+        - 560
         - 640
-        - 1024
-        - 1200
+        - 1080
     pages:
         - /
         - /en
@@ -113,14 +113,26 @@ advanced:
     mask: ''
     remove: ''
     isolate: ''
-    delay: 15
+    delay: 20
     scroll: true
     headers:
         - { header: '', value: '' }
     cookies: ''
-    custom_js: ''
+    custom_js: "(function () {\n  const banner = document.querySelector(\".eu-cookie-compliance-banner\");\n  if (banner) {\n    banner.style.display = \"none\";\n  }\n})();\n"
     custom_css: ''
-    mock_content: ''
+    mock_content:
+        - { selector: '', type: title }
+    login:
+        type: none
+        click_element: false
+        click_element_selector: ''
+        login_url: ''
+        username: ''
+        password: ''
+        username_selector: ''
+        password_selector: ''
+        submit_selector: ''
+        after_login_selector: ''
     performance:
         workers_production: 30
         workers_nonproduction: 10
